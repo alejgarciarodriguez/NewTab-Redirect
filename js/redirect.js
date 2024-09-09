@@ -6,7 +6,7 @@
             var url = items.url;
             if (url) {
                 url = (0 !== url.indexOf("about:") && 0 !== url.indexOf("data:") && -1 === url.indexOf("://")) ? ("http://" + url) : url;
-                if (/^http[s]?:/i.test(url) && items["always-tab-update"] !== true) {
+                if (items["always-tab-update"] !== true) {
                     document.location.href = url;
                 } else {
                     chrome.tabs.getCurrent(function (tab) {
